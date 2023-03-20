@@ -1,7 +1,5 @@
 # Project Icarus
 
-A neural network model for predicting student success without the usage of biased features. Created for CS 484 at George Mason University.
-
 ## Description
 
 WIP
