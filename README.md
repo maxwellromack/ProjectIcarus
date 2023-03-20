@@ -37,4 +37,4 @@ Maxwell Romack
 
 ## Acknowledgments
 
-* [Dataset used for model](https://www.kaggle.com/datasets/thedevastator/higher-education-predictors-of-student-retention)
+* [Dataset Used](https://www.kaggle.com/datasets/thedevastator/higher-education-predictors-of-student-retention)
