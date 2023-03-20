@@ -35,10 +35,6 @@ Maxwell Romack
 * 0.1
     * Initial Release
 
-## License
-
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
-
 ## Acknowledgments
 
 * [Dataset used for model](https://www.kaggle.com/datasets/thedevastator/higher-education-predictors-of-student-retention)
