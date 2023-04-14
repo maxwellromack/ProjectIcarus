@@ -7,7 +7,7 @@ data_array = data_frame.to_numpy()
 labels = data_array[:, 34].astype(str)
 features = np.delete(data_array, 34, 1)
 
-#Convert strings in labels array into ints and set as type 'int64'
+#Convert strings in labels array into ints and set as type 'float32'
 #Additionally, for the purposes of this project, data that has the label 'Enrolled' will be ignored
 int_labels = np.empty(3630, dtype = 'float32')
 remove_list = []
