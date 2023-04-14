@@ -2,7 +2,7 @@ import numpy as np
 import torch as th
 
 features = np.loadtxt('clean_features.txt', dtype = 'float32', delimiter = ',')
-labels = features = np.loadtxt('clean_labels.txt', dtype = 'float32', delimiter = ',')
+labels = np.loadtxt('clean_labels.txt', dtype = 'float32', delimiter = ',')
 
 class Dataset(th.utils.data.Dataset):
     def __init__(self, features, labels):
@@ -35,7 +35,23 @@ class NeuralNetwork(th.nn.Module):
         x = self.fc2(x)
         return x
 
-device = "cuda" if th.cuda.is_available() else "cpu"
-model = NeuralNetwork().to(device)
+model = NeuralNetwork().to("cpu")
 model.load_state_dict(th.load('model_weights.pth'))
 model.eval()
+
+loader = build_loader(features, labels)
+
+size = len(loader.dataset)
+numBatches = len(loader)
+model.eval()
+correct = 0
+with th.no_grad():
+    for X, y in loader:
+        X, y = X.to("cpu"), y.to("cpu")
+        prediction = model(X)
+        prediction = prediction.squeeze()
+        prediction = th.sigmoid(prediction)
+        prediction = (prediction > 0.5).type(th.float)
+        correct += (prediction == y).type(th.float).sum().item()
+correct /= size
+print(f"Model Accuracy: {(100 * correct):>0.1f}%")
