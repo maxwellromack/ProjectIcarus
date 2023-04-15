@@ -4,25 +4,13 @@
 
 WIP
 
-## Getting Started
+## Dependencies
 
-WIP
-
-### Dependencies
-
-WIP
-
-### Installing
-
-WIP
-
-### Executing program
-
-WIP
-
-## Help
-
-WIP
+* Python 3.x
+* [Numpy](https://numpy.org/install/)
+* [Pandas](https://pandas.pydata.org/docs/getting_started/install.html)
+* [PyTorch](https://pytorch.org/get-started/locally/) (CUDA reccomended)
+* [Matplotlib](https://matplotlib.org/stable/index.html)
 
 ## Authors
 
