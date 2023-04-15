@@ -1,5 +1,7 @@
 import numpy as np
 import torch as th
+import matplotlib.pyplot as plt
+import math
 
 features = np.loadtxt('clean_features.txt', dtype = 'float32', delimiter = ',')
 labels = np.loadtxt('clean_labels.txt', dtype = 'float32', delimiter = ',')
@@ -41,6 +43,10 @@ model.eval()
 
 loader = build_loader(features, labels)
 
+fig, ax = plt.subplots()
+chart_x = np.arange(10)
+chart_y = np.zeros(10, dtype = int)
+
 size = len(loader.dataset)
 numBatches = len(loader)
 model.eval()
@@ -51,7 +57,16 @@ with th.no_grad():
         prediction = model(X)
         prediction = prediction.squeeze()
         prediction = th.sigmoid(prediction)
+        for i in range(np.shape(prediction)[0]):
+            num = prediction[i].item() * 10
+            num = math.floor(num)
+            chart_y[num] += 1
         prediction = (prediction > 0.5).type(th.float)
         correct += (prediction == y).type(th.float).sum().item()
 correct /= size
 print(f"Model Accuracy: {(100 * correct):>0.1f}%")
+
+#Distribution of model prediction values
+ax.bar(chart_x, chart_y, width = 1, edgecolor = "white", linewidth = 0.7)
+ax.set(xlim = (-0.5, 9.5), xticks = np.arange(0, 10))
+plt.show(block = True)
