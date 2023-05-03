@@ -16,10 +16,6 @@ WIP
 
 Maxwell Romack
 
-## Version History
-
-WIP
-
 ## Acknowledgments
 
 * [Dataset Used](https://www.kaggle.com/datasets/thedevastator/higher-education-predictors-of-student-retention)
