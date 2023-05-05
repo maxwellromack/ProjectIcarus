@@ -14,7 +14,9 @@ WIP
 
 ## Authors
 
-Maxwell Romack, Nicholas Pepin, Manish Adhikari
+* Maxwell Romack
+* Nicholas Pepin
+* Manish Adhikari
 
 ## Acknowledgments
 
