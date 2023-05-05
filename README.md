@@ -2,7 +2,7 @@
 
 ## Description
 
-WIP
+This project aims to predict student success without the use of biased features. This repository contains the code for the semster-long group project for CS484 taken at George Mason University in Spring 2023.
 
 ## Dependencies
 
